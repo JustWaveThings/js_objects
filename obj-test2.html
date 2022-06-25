@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Object basics: Task 2</title>
+    <style>
+        p {
+            color: purple;
+            margin: 0.5em 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="../styles.css" /> -->
+</head>
+
+<body>
+
+    <section class="preview">
+
+    </section>
+
+</body>
+<script>
+    let bandInfo;
+
+    // Add your code here
+
+
+//     In our next task, we want you to have a go at creating your own object literal to represent one of your favorite bands.The required properties are:
+
+//         name: A string representing the band name.
+//             nationality: A string representing the country the band comes from.
+//                 genre: What type of music the band plays.
+//                     members: A number representing the number of members the band has.
+//                         formed: A number representing the year the band formed.
+//                             split: A number representing the year the band split up, or false if they are still together.
+//                                 albums: An array representing the albums released by the band.Each array item should be an object containing the following members:
+//         name: A string representing the name of the album.
+//             released: A number representing the year the album was released.
+// Include at least two albums in the albums array.
+
+// then write a string to the variable bandInfo, which will contain a small biography detailing their name, nationality, years active, and style, and the title and release date of their first album.
+
+    const band = {
+        name: "Radiohead",
+        nationality: "United Kingdom",
+        genre: "alternative/indie/dance/electronic",
+        members: 5,
+        formed: "1985",
+        split: "false",
+        albums: [{name: "Pablo Honey", released: 1993}, { name: "The Bends", released: 1995 }, { name: "Ok Computer", released: 1997 }, { name: "Kid A", released: 2000 }, { name: "Amnesiac", released: 2001 }, { name: "Hail to the Thief", released: 2003}, { name: "In Rainbows", released: 2007 }, { name: "The King of Limbs", released: 2011 }, { name: "A Moon Shaped Pool", released: 2016}],
+        bio() {return `My favorite band is named ${this.name}, who hail from the ${this.nationality}, and is tough to peg to one genre, as they've changed in their long tenure as band that formed way back in ${this.formed}. ${this.name}'s genre could be defined as: ${this.genre}. Their first album is ${this.albums[0].name} and hit the record store shelves (remember them?) in ${this.albums[0].released}, almost ${2022 - this.albums[0].released} years ago.`
+        },
+    }
+
+    bandInfo = band.bio();
+
+
+    // Don't edit the code below here!
+
+    const section = document.querySelector('section');
+    let para1 = document.createElement('p');
+    para1.textContent = bandInfo;
+    section.appendChild(para1);
+
+</script>
+
+</html>
