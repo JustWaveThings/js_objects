@@ -1,0 +1,279 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+
+/*
+
+// defining objects
+
+let user = new Object(); // object constructor
+let user2 = {}; // object literal
+
+let user3 = {
+    name: 'John',  // name is a key  / john is a value 
+    age: 30
+};
+
+// We can add, remove and read files from it at any time.
+
+// Property values are accessible using the dot notation:
+
+console.log(user3.name);
+console.log(user3.age);
+console.log(user3);
+
+user3.isAdmin = true; // dot notation to add key/value pair to object
+
+delete user3.age; // dot notation to delete age key/value pair from object
+
+console.log(user3);
+
+user3["Likes birds"] = true; // multi word key uses square bracket notation instead of dot notation like line 33
+
+console.log(user3);
+
+let key = "likes bats" // same as line 37
+user3[key] = true; 
+
+console.log(user3);
+
+let user4 = {
+    name: "Steve",
+    age: 29,
+};
+
+// let key2 = prompt("what do you want to know about the user?", "name");
+
+// console.log(user4[key2]); // note that this is BRACKET NOTATION... does not work with DOT notation...  // console.log(user4.key2) will return undefined
+
+
+// computed properties in objects
+
+// let fruit = prompt("which fruit to buy?", "apple");
+
+// let bag = {
+//     [fruit]: 5,
+// };
+
+// console.log(bag.apple); // would be 5 if the person filling the prompt chose apple
+
+// another way to look at the above example ^^^ looks nicer
+
+// let fruit2 = prompt("which fruit to buy?", "apple");
+// let bag2 = {};
+// bag2[fruit2] = 10;
+// console.log(bag2.apple); // returns 10
+
+// more complex expressions
+
+let fruit3 = "banana";
+let bag3 = {
+    [fruit3 + 'Computers']: 30,
+};
+
+console.log(bag3.bananaComputers); // returns 30
+
+function makeUser(name, age) {
+    return {
+        name: name,
+        age: age,
+    };
+}
+
+let user5 = makeUser("David", 40);
+console.log(makeUser()); // for some reason returns object with undefined keys
+console.log(user5.name); // returns David
+
+// simpler way to handle assigning variables to property name in an object  
+
+function makeUser2(name, age) {
+    return {
+        name, // same as name: name
+        age,  // same as age: age
+    };
+}
+
+// objects don't have limitations on property names -- any reserved list name is fine -- numbers as property keys are converted to strings.... see example below 
+
+let obj = {
+    0: "test",
+};
+
+console.log(obj["0"]);
+console.log(obj[0]);  // both return 0;
+console.log(obj[0]===obj["0"]); // returns true;
+
+
+// property existence test 'in' operator - objects in JS don't error if you ask for a property that doesn' exist, it just returns undefined
+
+// method one 
+
+let user6 = {};
+console.log(user.noSuchProperty === undefined); // true means "no such property"
+
+// method 2 -- 'key in object'
+
+let user7 = {
+    name: "Joseph",
+    age: 88,
+};
+
+console.log( "age" in user7 ); // true -- user7.age exists
+console.log( "falcon" in user7);//false user.falcon does not exist
+
+// IMPORTANT ---  left of of "in" must be a property name -- usually a quoted string, if not, it will test whatever the variable holds.
+
+let user8 = {
+    age: 30,
+};
+
+let key3 = "age";
+console.log( key3 in user8 ); // true because property age exists
+
+// we use key 'in' object  over testing objects for "undefined" as objects can hold properties that are 'undefined' and simply testing for undefined would make it look like the object didn't have a property when it did.
+
+// undefined should not be explictly assigned, use 'null' for unknown or empty values
+
+//  'for..in' loop for objects
+
+//syntax
+
+// for (key in object) {
+//     // executes the body for each key 
+// }
+
+// let's output all properties of user...
+
+let user9 = {
+    name: "John",
+    age: 40,
+    isAdmin: false,
+};
+
+for (let key in user9) {
+    // console.log(key); // returns name, age, isAdmin each individually
+    // console.log(user9[key]); // returns the values present for each key
+}
+
+// Also, we could use another variable name here instead of key. For instance, "for (let prop in obj)" is also widely used.
+
+// object order test
+
+let codes = {
+    "49": "Germany",
+    "1": "USA",
+    age: 25,
+};
+
+for (let code in codes) {
+    // console.log(code); // returned 1 49 age.... 
+    // console.log ( +code );  // returned 1 49 NaN...
+}
+
+// 2nd test, with + operator prefix in the property key
+
+let codes2 = {
+    "+49": "Germany",
+    "+1": "USA",
+    age: 25,
+};
+
+for (let code in codes2) { 
+    console.log(code);  // returned +49 +1 age... 
+}
+*/
+
+// tasks - https://javascript.info/object
+
+// Write the code, one line for each action:
+
+// Create an empty object user.
+// Add the property name with the value John.
+// Add the property surname with the value Smith.
+// Change the value of the name to Pete.
+// Remove the property name from the object.
+
+// let user = {};
+// user.name = "John";
+// console.log(user);
+// user.surname = "Smith";
+// user.name = "Pete";
+// console.log(user);
+// delete user.name;
+// console.log(user);
+
+
+// check for emptiness
+
+// this was my attempt, it was right but failed the test for some reason 
+
+// let schedule = {};
+//  schedule["8:30"] = "get up";
+// // delete schedule["8:30"]
+
+// function isEmpty(obj) {
+//     console.log(Object.getOwnPropertyNames(obj));
+//     return ((Object.getOwnPropertyNames(obj) === 0) ? true : false ) 
+// };
+// console.log(isEmpty(schedule));
+
+// the 'correct answer' that passed the unit test 
+    // function isEmpty(obj) {
+    //     for (let key in obj) {
+    //         // if the loop has started, there is a property
+    //         return false;
+    //     }
+    //     return true;
+    // }
+
+
+
+// sum object properties
+
+    // Write the code to sum all salaries and store in the variable sum. Should be 390 in the example above.If salaries is empty, then the result must be 0.
+
+    // let salaries = {
+    //     John: 0,
+    //     Ann: 0,
+    //     Pete: 0,
+    // }
+
+    // function addSalaries(obj) {
+    //     let sum = 0;
+    //     for (let key in obj) {
+    //         sum += obj[key];
+    //     }
+    //     return sum;
+    // } 
+
+    // console.log(addSalaries(salaries));  // works
+
+// multiply numeric property values by 2
+
+    // Create a function multiplyNumeric(obj) that multiplies all numeric property values of obj by 2.
+
+    let menu = {
+            width: 200,
+            height: 300,
+            title: "My menu"
+        };
+
+    function multiplyNumeric(obj) {
+        for (let key in obj) {
+            ((typeof(obj[key]) === 'number') ? (obj[key])*= 2 : obj[key])
+        }
+    }    
+    multiplyNumeric(menu);
+    console.log(menu);
+
+</script>
+
+
