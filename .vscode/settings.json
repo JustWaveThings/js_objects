@@ -1,0 +1,11 @@
+{
+    "template-string-converter.autoRemoveTemplateString": true,
+    "template-string-converter.convertOutermostQuotes": true,
+    "template-string-converter.validLanguages": [
+        "svelte",
+        "typescript",
+        "javascript",
+        "typescriptreact",
+        "javascriptreact",
+    ]
+}
