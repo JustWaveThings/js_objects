@@ -18,17 +18,17 @@
 // };
 
 const person = {
-  name: {
-    first: "Bob",
-    last: "Smith",
-  },
-  age: 32,
-  bio() {
-    console.log(`${this.name[0]} ${this.name[1]} is ${this.age} years old.`);
-  },
-  introduceSelf: function () {
-    console.log(`Hi! I'm ${this.name[0]}.`);
-  },
+	name: {
+		first: "Bob",
+		last: "Smith",
+	},
+	age: 32,
+	bio() {
+		console.log(`${this.name[0]} ${this.name[1]} is ${this.age} years old.`);
+	},
+	introduceSelf: function () {
+		console.log(`Hi! I'm ${this.name[0]}.`);
+	},
 };
 
 // talk about bracket notation again...
@@ -48,7 +48,7 @@ person["name"]["last"] = "Cratchit";
 
 person["eyes"] = "hazel";
 person.farewell = function () {
-  console.log("Bye Everyone!");
+	console.log("Bye Everyone!");
 };
 
 const myDataName = "height";
@@ -84,15 +84,41 @@ person[myDataName] = myDataValue;
 // constructors CONSTRUCTORS constructors
 // Constructors define the shape of an object.
 
+//  VVV this is not a constructor, this is just a function... 
 function createPerson(name) {
-  const obj = {};
-  obj.name = name;
-  obj.introduceSelf = function () {
-    console.log(`Hi! I'm ${this.name}.`); // did manually
-    console.log("Hi! I'm ${this.name}.");
-    console.log("Hi! I'm ${this.name}.");
-    console.log("Hi! I'm $this.name}");
-    console.log("hi ${test.name}");
-  };
-  return obj;
+	const obj = {};
+	obj.name = name;
+	obj.introduceSelf = function () {	
+		console.log(` Hi! I'm ${this.name}`)
+	};
+	return obj;
 }
+// what's important to know about this function is that it has two properties name and introduceSelf() and will only take a passed name argument. It creates a new object when we call it.
+
+// reusing createPerson()
+
+const salva = createPerson('Salva'); //salva.introduceSelf() Hi! I'm Salva
+const frankie = createPerson('Frankie'); 
+
+// A constructor is just a function called using the new keyword. When called,
+// -create a new object !
+// -bind 'this' to the new object.
+// - run the code in the constructor
+// - return new object 
+
+// constructors START WITH A CAPITAL Letter 
+// same function as above, just in constructor form:
+
+function Person(name) {
+	this.name = name;
+	this.introduceSelf = function () {
+		console.log(`Hi! I'm ${this.name}.`);
+	}
+}
+
+// to call Person() as a constructor, we use 'new': 
+
+const david = new Person('David');
+const Emmanuel = new Person('Emmanuel');
+
+const myNotification = new Notification("Hello!");
